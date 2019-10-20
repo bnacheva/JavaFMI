@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4c6e01fa-30b4-4dd1-a957-09b581c2794e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c8e49f55-bfff-4901-823c-df840a71c31f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,20 +16,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
-  </component>
-  <component name="ProjectId" id="1SFdNGtOJiEnvlhDvcTqq3Hr7BA" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1ST8b27LJkoRo748DBVKBEJAsxr" />
   <component name="PropertiesComponent">
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
-    <property name="Repository.Attach.Annotations" value="false" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -53,10 +44,10 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.FractionSimplifierTest">
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.company.Main" />
-      <module name="02-fraction-simplifier" />
+      <option name="MAIN_CLASS_NAME" value="bg.sofia.uni.fmi.mjt.virtualwallet.core.Main" />
+      <module name="Virtual Wallet Application" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
@@ -64,28 +55,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FractionSimplifierTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="02-fraction-simplifier" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.company.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.company" />
-      <option name="MAIN_CLASS_NAME" value="com.company.FractionSimplifierTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.FractionSimplifierTest" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FractionSimplifierTest" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -95,29 +66,16 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4c6e01fa-30b4-4dd1-a957-09b581c2794e" name="Default Changelist" comment="" />
-      <created>1571163236805</created>
+      <changelist id="c8e49f55-bfff-4901-823c-df840a71c31f" name="Default Changelist" comment="" />
+      <created>1571576295387</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1571163236805</updated>
-      <workItem from="1571163248967" duration="2607000" />
-      <workItem from="1571213148624" duration="222000" />
-      <workItem from="1571249756904" duration="222000" />
+      <updated>1571576295387</updated>
+      <workItem from="1571576310893" duration="6053000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>
