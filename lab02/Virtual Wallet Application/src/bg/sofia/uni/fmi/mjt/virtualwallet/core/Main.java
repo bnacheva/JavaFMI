@@ -24,12 +24,12 @@ public class Main {
         wallet.printWallet();
         wallet.getCardByName("what");
         wallet.getCardByName("goldenCard1");
+        LocalDateTime date = LocalDateTime.now();
         PaymentInfo newPaymentInfo = new PaymentInfo("why", "BG", 10);
         wallet.executePayment(newStandardCard, newPaymentInfo);
         wallet.executePayment(newGoldenCard, newPaymentInfo);
         wallet.printWallet();
-        String location = LocalDateTime.now().toString();
-        PaymentInfo tryPaymentInfo = new PaymentInfo("payment", location, 10);
+        PaymentInfo tryPaymentInfo = new PaymentInfo(date, "payment", "BG", 10);
         Transaction newTransaction = new Transaction();
         newTransaction.addTransaction(newStandardCard, tryPaymentInfo);
         newTransaction.printAllTransactions();

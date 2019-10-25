@@ -2,13 +2,12 @@ package bg.sofia.uni.fmi.mjt.virtualwallet.core.payment;
 
 import bg.sofia.uni.fmi.mjt.virtualwallet.core.card.Card;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class Transaction {
-    private Map<Card, PaymentInfo> allTransactions = new HashMap<>();
+    private Map<Card, PaymentInfo> allTransactions = new LinkedHashMap<>();
     private Card card;
     private PaymentInfo paymentInfo;
 
@@ -25,7 +24,12 @@ public class Transaction {
     }
 
     public void addTransaction(Card c, PaymentInfo p) {
-        allTransactions.put(c, p);
+        if (allTransactions.size() < 10) {
+            allTransactions.put(c, p);
+        } else {
+            allTransactions.entrySet().remove(0);
+            allTransactions.put(c, p);
+        }
     }
 
     public void printAllTransactions() {
@@ -35,7 +39,7 @@ public class Transaction {
         else {
             for (Map.Entry<Card, PaymentInfo> entry : allTransactions.entrySet())
                 System.out.println("Card = " + entry.getKey().getName() +
-                        ", PaymentInfo = " + entry.getValue().getReason() + ", " +
+                        ", PaymentInfo = " + entry.getValue().getDate() + ", " +  entry.getValue().getReason() + ", " +
                         entry.getValue().getLocation() + ", " + entry.getValue().getCost());
         }
     }

@@ -35,7 +35,7 @@ public class VirtualWallet implements VirtualWalletAPI {
                 if (c.getName() == card.getName()) {
                     return false;
                 }
-                else {
+                else if (wallet.size() < 5) {
                     wallet.add(card);
                     return true;
                 }

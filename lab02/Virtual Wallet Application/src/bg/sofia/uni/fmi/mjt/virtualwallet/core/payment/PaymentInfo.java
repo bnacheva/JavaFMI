@@ -1,7 +1,10 @@
 package bg.sofia.uni.fmi.mjt.virtualwallet.core.payment;
 
+import java.time.LocalDateTime;
+
 public class PaymentInfo {
 
+    private LocalDateTime date;
     private String reason;
     private String location;
     private double cost;
@@ -15,6 +18,17 @@ public class PaymentInfo {
         this.location = location;
         this.cost = cost;
     }
+
+    public PaymentInfo(LocalDateTime date, String reason, String location, double cost) {
+        this.date = date;
+        this.reason = reason;
+        this.location = location;
+        this.cost = cost;
+    }
+
+    public LocalDateTime getDate() { return this.date; }
+
+    public void setDate(LocalDateTime date) { this.date = date; }
 
     public double getCost() {
         return this.cost;
