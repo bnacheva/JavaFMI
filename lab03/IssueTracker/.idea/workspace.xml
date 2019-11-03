@@ -24,8 +24,13 @@
   </component>
   <component name="ProjectId" id="1SkJh1xApfwrY74S2mzQ0maeTAq" />
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -68,6 +73,7 @@
       <option name="presentableId" value="Default" />
       <updated>1572101775786</updated>
       <workItem from="1572101779476" duration="2657000" />
+      <workItem from="1572776104174" duration="3176000" />
     </task>
     <servers />
   </component>

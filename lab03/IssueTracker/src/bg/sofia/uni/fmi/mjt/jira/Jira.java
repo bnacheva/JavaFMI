@@ -5,6 +5,7 @@ import bg.sofia.uni.fmi.mjt.jira.enums.WorkAction;
 import bg.sofia.uni.fmi.mjt.jira.interfaces.Filter;
 import bg.sofia.uni.fmi.mjt.jira.interfaces.Repository;
 import bg.sofia.uni.fmi.mjt.jira.issues.Issue;
+import org.jetbrains.annotations.Contract;
 
 public class Jira implements Filter, Repository {
 
@@ -27,10 +28,12 @@ public class Jira implements Filter, Repository {
         this.issues = issues;
     }
 
+    @Contract(pure = true)
     public Jira() {
 
     }
 
+    @Contract(pure = true)
     public Jira(int size, Issue[] issues) {
         this.size = size;
         this.issues = issues;
@@ -51,6 +54,7 @@ public class Jira implements Filter, Repository {
         if (this.size > 100) {
             throw new ArrayIndexOutOfBoundsException("The array of issues is full!");
         } else if (this.find(issue.getIssueID()) != null) {
+            throw new IllegalArgumentException("This issue already presents in the array!");
         } else {
             issues[size + 1] = issue;
         }
