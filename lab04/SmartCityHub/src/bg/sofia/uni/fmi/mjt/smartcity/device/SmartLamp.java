@@ -2,6 +2,7 @@ package bg.sofia.uni.fmi.mjt.smartcity.device;
 
 import bg.sofia.uni.fmi.mjt.smartcity.enums.DeviceType;
 import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 
 import java.time.LocalDateTime;
 
@@ -11,10 +12,16 @@ public class SmartLamp implements SmartDevice {
     private Double powerConsumption;
     private LocalDateTime installationDateTime;
     private DeviceType deviceType;
+    private int deviceCounter = 0;
 
     @Override
     public String getId() {
         return this.id;
+    }
+
+    public void setId(@NotNull SmartDevice device) {
+        this.id = device.getType().getShortName() + "-" + device.getName() + "-" + this.deviceCounter;
+        this.deviceCounter++;
     }
 
     @Override

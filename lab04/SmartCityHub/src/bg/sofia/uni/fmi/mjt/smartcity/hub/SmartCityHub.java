@@ -5,8 +5,11 @@ import bg.sofia.uni.fmi.mjt.smartcity.enums.DeviceType;
 import org.jetbrains.annotations.Contract;
 
 import java.util.Collection;
+import java.util.HashSet;
 
 public class SmartCityHub {
+    private HashSet<SmartDevice> smartDevices = new HashSet<>();
+
     @Contract(pure = true)
     public SmartCityHub() {
 
@@ -21,8 +24,10 @@ public class SmartCityHub {
     public void register(SmartDevice device) throws DeviceAlreadyRegisteredException {
         if (device == null) {
             throw new IllegalArgumentException();
-        } else {
+        } else if (this.smartDevices.contains(device)) {
             throw new DeviceAlreadyRegisteredException("The device is already registered!");
+        } else {
+            smartDevices.add(device);
         }
     }
 
@@ -35,8 +40,10 @@ public class SmartCityHub {
     public void unregister(SmartDevice device) throws DeviceNotFoundException {
         if (device == null) {
             throw new IllegalArgumentException();
-        } else {
+        } else if (!this.smartDevices.contains(device)) {
             throw new DeviceNotFoundException("The device is not found!");
+        } else {
+            this.smartDevices.remove(device);
         }
     }
 
@@ -50,6 +57,11 @@ public class SmartCityHub {
         if (id == null) {
             throw new IllegalArgumentException();
         } else {
+            for(SmartDevice smartDevice : this.smartDevices) {
+                if (smartDevice.getId() == id) {
+                    return smartDevice;
+                }
+            }
             throw new DeviceNotFoundException("The device with this ID is not found!");
         }
     }
@@ -60,7 +72,17 @@ public class SmartCityHub {
      * @throws IllegalArgumentException in case @type is null.
      */
     public int getDeviceQuantityPerType(DeviceType type) {
-        throw new IllegalArgumentException();
+        if (type == null) {
+            throw new IllegalArgumentException();
+        } else {
+            int counter = 0;
+            for(SmartDevice smartDevice : this.smartDevices) {
+                if (smartDevice.getType() == type) {
+                    counter++;
+                }
+            }
+            return counter;
+        }
     }
 
     /**
