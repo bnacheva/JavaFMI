@@ -21,7 +21,7 @@ public class LeastFrequentlyUsed implements Cache, CacheFactory {
         this.cache = new HashMap<>();
         this.hitRate = 0.0;
         this.usesCount = 0;
-        this.capacity = 0l;
+        this.capacity = 0L;
         this.evictionPolicy = EvictionPolicy.LEAST_FREQUENTLY_USED;
     }
 
@@ -49,12 +49,15 @@ public class LeastFrequentlyUsed implements Cache, CacheFactory {
             return;
         } else if (this.cache.containsKey(key)) {
             this.cache.replace(key, value);
+            this.hitRate++;
+            this.usesCount++;
         } else {
             if (this.capacity < CAPACITY) {
                 this.cache.put(key, value);
+                this.hitRate++;
+                this.usesCount++;
                 this.capacity++;
             } else {
-
             }
         }
     }
@@ -95,10 +98,19 @@ public class LeastFrequentlyUsed implements Cache, CacheFactory {
     }
 
     <K, V> Cache<K, V> getInstance(long capacity, EvictionPolicy policy) {
-        return null;
+        if (capacity <= 0) {
+            throw new IllegalArgumentException();
+        }
+        Cache<K, V> newInstance = new LeastFrequentlyUsed();
+        this.capacity = capacity;
+        this.evictionPolicy = policy;
+        return newInstance;
     }
 
     <K, V> Cache<K, V> getInstance(EvictionPolicy policy) {
-        return null;
+        Cache<K, V> newInstance = new LeastFrequentlyUsed();
+        this.capacity = 10000;
+        this.evictionPolicy = policy;
+        return newInstance;
     }
 }

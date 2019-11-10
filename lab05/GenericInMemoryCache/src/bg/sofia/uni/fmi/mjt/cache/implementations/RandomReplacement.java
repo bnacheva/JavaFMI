@@ -21,7 +21,7 @@ public class RandomReplacement implements Cache, CacheFactory {
         this.cache = new HashMap<>();
         this.hitRate = 0.0;
         this.usesCount = 0;
-        this.capacity = 0l;
+        this.capacity = 0L;
         this.evictionPolicy = EvictionPolicy.RANDOM_REPLACEMENT;
     }
 
@@ -102,18 +102,23 @@ public class RandomReplacement implements Cache, CacheFactory {
 
     @Override
     public int getUsesCount(Object key) {
-        if (!this.cache.containsKey(key)) {
-            return 0;
-        } else {
-            return this.usesCount;
-        }
+        throw new UnsupportedOperationException();
     }
 
     <K, V> Cache<K, V> getInstance(long capacity, EvictionPolicy policy) {
-        return null;
+        if (capacity <= 0) {
+            throw new IllegalArgumentException();
+        }
+        Cache<K, V> newInstance = new RandomReplacement();
+        this.capacity = capacity;
+        this.evictionPolicy = policy;
+        return newInstance;
     }
 
     <K, V> Cache<K, V> getInstance(EvictionPolicy policy) {
-        return null;
+        Cache<K, V> newInstance = new RandomReplacement();
+        this.capacity = 10000;
+        this.evictionPolicy = policy;
+        return newInstance;
     }
 }
