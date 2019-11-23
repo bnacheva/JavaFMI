@@ -10,9 +10,8 @@ import java.util.*;
 
 public class ShoppingDirectoryImpl implements ShoppingDirectory {
 
-    Set<Offer> allOffers = new HashSet<>();
-
-
+    private Set<Offer> allOffers = new HashSet<>();
+	
     @Override
     public Collection<Offer> findAllOffers(String productName) throws ProductNotFoundException {
         if (productName == null) {
