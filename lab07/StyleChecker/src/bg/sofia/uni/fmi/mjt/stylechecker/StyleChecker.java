@@ -43,7 +43,8 @@ public class StyleChecker {
         return !currentLine.isBlank() && currentLine.trim().equals("{");
     }
 
-    private boolean matchPackageName(@NotNull String currentLine) {
+    @Contract(pure = true)
+    private static boolean matchPackageName(@NotNull String currentLine) {
         return !currentLine.isBlank() && currentLine.trim().startsWith("package")
                 && !currentLine.trim().matches("^package\\s([a-z0-9]+\\.)+[a-z]+;$");
     }
