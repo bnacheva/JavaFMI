@@ -16,34 +16,34 @@ import java.nio.file.StandardOpenOption;
  */
 public class StyleChecker {
 
-    public static final String WILDCARDS_NOT_ALLOWED = "// FIXME Wildcards are not allowed in import statements";
-    public static final String ONE_STATEMENT_PER_LINE = "// FIXME Only one statement per line is allowed";
-    public static final String LENGTH_OF_LINE = "// FIXME Length of line should not exceed 100 characters";
-    public static final String OPENING_BRACKETS = "// FIXME Opening brackets should be placed on the same line as the declaration";
-    public static final String PACKAGE_NAME = "// FIXME Package name should not contain upper-case letters or underscores";
+    private static final String WILDCARDS_NOT_ALLOWED = "// FIXME Wildcards are not allowed in import statements";
+    private static final String ONE_STATEMENT_PER_LINE = "// FIXME Only one statement per line is allowed";
+    private static final String LENGTH_OF_LINE = "// FIXME Length of line should not exceed 100 characters";
+    private static final String OPENING_BRACKETS = "// FIXME Opening brackets should be placed on the same line as the declaration";
+    private static final String PACKAGE_NAME = "// FIXME Package name should not contain upper-case letters or underscores";
 
     @Contract(pure = true)
-    public static boolean matchWildcards(@NotNull String currentLine) {
+    private static boolean matchWildcards(@NotNull String currentLine) {
         return !currentLine.isBlank() && currentLine.trim().startsWith("import")
                 && currentLine.trim().matches("^import\\s([a-z0-9]+\\.)+\\*;$");
     }
 
     @Contract(pure = true)
-    public static boolean matchOneStatement(@NotNull String currentLine) {
+    private static boolean matchOneStatement(@NotNull String currentLine) {
         return !currentLine.isBlank() && currentLine.trim().matches(".*(;)+.+");
     }
 
     @Contract(pure = true)
-    public static boolean matchLengthLine(@NotNull String currentLine) {
+    private static boolean matchLengthLine(@NotNull String currentLine) {
         return !currentLine.isBlank() && currentLine.trim().matches("^.{100,}$");
     }
 
     @Contract(pure = true)
-    public static boolean matchOpeningBrackets(@NotNull String currentLine) {
+    private static boolean matchOpeningBrackets(@NotNull String currentLine) {
         return !currentLine.isBlank() && currentLine.trim().equals("{");
     }
 
-    public boolean matchPackageName(@NotNull String currentLine) {
+    private boolean matchPackageName(@NotNull String currentLine) {
         return !currentLine.isBlank() && currentLine.trim().startsWith("package")
                 && !currentLine.trim().matches("^package\\s([a-z0-9]+\\.)+[a-z]+;$");
     }
